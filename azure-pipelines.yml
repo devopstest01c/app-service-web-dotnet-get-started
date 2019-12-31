@@ -36,6 +36,11 @@ steps:
   inputs:
     Contents: 'deploy.ps1'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'aspnet-get-started.SetParameters.xml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    OverWrite: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
